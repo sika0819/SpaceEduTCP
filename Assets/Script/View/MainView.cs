@@ -15,7 +15,7 @@ public class MainView : View {
     GameObject teacherPanelObject;
     public SelectCharView selectCharView;
     GameObject selectPanelObject;
-    private ActivePanelSingal activePanelSingal;
+
    
     // Use this for initialization
     public void init()
@@ -33,28 +33,27 @@ public class MainView : View {
         StudentPanel.Init(studentPanelObject);
         TeacherPanel = teacherPanelObject.AddComponent<ControlPanelView>();
         TeacherPanel.Init(teacherPanelObject);
-        activePanelSingal = new ActivePanelSingal();
-        activePanelSingal.AddListener(SetPanelActive);
+    
     }
-    public void DispachPanelActive(string panelName, bool isActive) {
-        PanelData panelData = new PanelData();
-        panelData.PanelName = panelName;
-        panelData.isActive = isActive;
-        activePanelSingal.Dispatch(panelData);
-    }
-    public void SetPanelActive(PanelData panelData) {
-        switch (panelData.PanelName) {
+    public void SetPanelActive(string panelData)
+    {
+        loginView.SetActive(false);
+        selectCharView.SetActive(false);
+        StudentPanel.SetActive(false);
+        TeacherPanel.SetActive(false);
+        switch (panelData)
+        {
             case GlobalName.LoginPanel:
-                loginView.SetActive(panelData.isActive);
+                loginView.SetActive(true);
                 break;
             case GlobalName.SelectCharPanel:
-                selectCharView.SetActive(panelData.isActive);
+                selectCharView.SetActive(true);
                 break;
             case GlobalName.StudentPanel:
-                StudentPanel.SetActive(panelData.isActive);
+                StudentPanel.SetActive(true);
                 break;
             case GlobalName.TeacherPanel:
-                TeacherPanel.SetActive(panelData.isActive);
+                TeacherPanel.SetActive(true);
                 break;
         }
     }

@@ -8,9 +8,10 @@ public class LoginPanelViewMediator:Mediator{
     [Inject]
     public LoginPanelView loginView { get; set; }
     [Inject]
-    public CallHttpRequestSignal callHttpRequestSignal { get; set; }
+    public CallLoginHttpSingal callLogin { get; set; }
     [Inject]
-    public SelectCharSingal selectCharSingal { get; set; }
+    public ActivePanelSingal selectCharSingal { get; set; }
+    
     public override void OnRegister()
     {
         loginView.loginSignal.AddListener(onLoginClick);
@@ -26,6 +27,7 @@ public class LoginPanelViewMediator:Mediator{
     private void OnLoginStateChanged(LoginState loginState)
     {
         string loginInfo = "";
+       
         switch (loginState)
         {
             case LoginState.WaitForLogin:
@@ -34,7 +36,7 @@ public class LoginPanelViewMediator:Mediator{
             case LoginState.isLogined:
                 loginInfo = CommenValue.LoginSuccess;
                 loginView.OnLogin();
-                selectCharSingal.Dispatch();
+                selectCharSingal.Dispatch(GlobalName.SelectCharPanel);
                 break;
             case LoginState.LoginFailed:
                 loginInfo = CommenValue.LoginFailed;
@@ -46,7 +48,7 @@ public class LoginPanelViewMediator:Mediator{
     {
         //Dispatch a Signal. We're adding a string value (different from MyFirstContext,
         //just to show how we can Inject values into commands)
-        callHttpRequestSignal.Dispatch(data);
+        callLogin.Dispatch(data);
 
     }
 

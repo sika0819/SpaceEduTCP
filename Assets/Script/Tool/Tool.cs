@@ -9,7 +9,11 @@ using UnityEngine;
 public static class LogTool {
 
     public static void Log(object msg) {
+#if UNITY_EDITOR
+        Debug.Log(msg);
+#else
         NGUIDebug.Log(msg);
+#endif
         //NGUIDebug.Clear();
     }
     
@@ -28,4 +32,8 @@ public static class GlobalName {
     public const string StudentPanel = "StudentPanel";
     public const string TeacherPanel = "TeacherPanel";
 }
-
+public static class requestUrl {
+    public const string login = @"login";
+    public const string courses = @"v1/courses";
+    public const string textureUrl = @"http://www.spaced.com.cn/vrclass/";
+}

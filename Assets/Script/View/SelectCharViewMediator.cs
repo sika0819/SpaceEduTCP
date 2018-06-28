@@ -5,10 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectCharViewMediator : Mediator {
-   
+
 
     [Inject]
     public SelectCharView selectCharView { get; set; }
+    [Inject]
+    public LoginByIdentySingal loginByIdentySingal{get;set;}
+    [Inject]
+    public CallGetHttpSingal callGetHttpSingal { get; set; }
     public override void OnRegister()
     {
         
@@ -19,12 +23,13 @@ public class SelectCharViewMediator : Mediator {
     
     private void OnTeacherLogin()
     {
-        selectCharView.DispatchSingal(Identity.Teacher);
+        loginByIdentySingal.Dispatch(Identity.Teacher);
+        callGetHttpSingal.Dispatch(requestUrl.courses);
     }
 
     private void OnStudentLogin()
     {
-        selectCharView.DispatchSingal(Identity.Student);
+        loginByIdentySingal.Dispatch(Identity.Student);
     }
     public override void OnRemove()
     {

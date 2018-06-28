@@ -8,10 +8,10 @@ public class PanelActiveCommand : Command {
     [Inject(ContextKeys.CONTEXT_VIEW)]
     public GameObject mainViewObject { get; set; }
     [Inject]
-    public PanelData panelData { get; set; }
+    public string panelData { get; set; }
     public override void Execute()
     {
-
+        Debug.Log(panelData);
         MainView mainView = mainViewObject.GetComponent<MainView>();
         mainView.SetPanelActive(panelData);
     }

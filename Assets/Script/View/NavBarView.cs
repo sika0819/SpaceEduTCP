@@ -5,22 +5,35 @@ using UnityEngine;
 public class NavBarView : View
 {
     private GameObject NavBarObejct;
-    public UIButton backBtn;
+    private UIToggle SettingBtn;
+    private UIButton backBtn;
     private UIButton student;
     private UIButton searchBtn;
-    EventDelegate OnClickBackBtn;
-    public SelectCharSingal selectCharSingal;
     public void Init(GameObject go)
     {
         NavBarObejct = go;
         backBtn = go.transform.Find("backBtn").GetComponent<UIButton>();
-        OnClickBackBtn = new EventDelegate(OnBackBtnClick);
-        selectCharSingal = new SelectCharSingal();
-        backBtn.onClick.Add(OnClickBackBtn);
+        SettingBtn= go.transform.Find("SettingBtn").GetComponent<UIToggle>();
     }
 
-    private void OnBackBtnClick()
+    public void AddSettingDelegate(EventDelegate action)
     {
-        selectCharSingal.Dispatch();
+        SettingBtn.onChange.Add(action);
+    }
+    public void SetSettingToggle(bool value) {
+        SettingBtn.value=value;
+    }
+    public void RemoteSettingDelegate(EventDelegate action)
+    {
+        SettingBtn.onChange.Remove(action);
+    }
+
+    public void AddBackDeleagate(EventDelegate action)
+    {
+        backBtn.onClick.Add(action);
+    }
+    public void RemoveBackDelegate(EventDelegate action)
+    {
+        backBtn.onClick.Remove(action);
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class SelectCharView : View {
     public UIPanel selectCharPanel;
-    private LoginByIdentySingal loginByIdentySingal;
     private GameObject SelectCharObject;
     private UIButton stuLoginBtn;
     private UIButton teacherLoginBtn;
@@ -17,8 +16,8 @@ public class SelectCharView : View {
         selectCharPanel = SelectCharObject.GetComponent<UIPanel>();
         stuLoginBtn = SelectCharObject.transform.Find("stuLoginBtn").GetComponent<UIButton>();
         teacherLoginBtn = SelectCharObject.transform.Find("teacherLoginBtn").GetComponent<UIButton>();
-        loginByIdentySingal = new LoginByIdentySingal();
-        SetActive(false);
+
+
     }
     public void ClickStudentLogin(EventDelegate OnClickStuLogin) {
         stuLoginBtn.onClick.Add(OnClickStuLogin);
@@ -38,17 +37,7 @@ public class SelectCharView : View {
 
         teacherLoginBtn.onClick.Add(OnClickTeacherLogin);
     }
-    public void AddLoginById(Action<Identity> action)
-    {
-        loginByIdentySingal.AddListener(action);
-    }
-    public void RemoveLoginById(Action<Identity> action)
-    {
-        loginByIdentySingal.RemoveListener(action);
-    }
-    public void DispatchSingal(Identity identity) {
-        loginByIdentySingal.Dispatch(identity);
-    }
+
     public void SetActive(bool isActive)
     {
         if (isActive)

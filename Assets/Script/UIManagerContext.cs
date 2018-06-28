@@ -35,14 +35,18 @@ public class UIManagerContext : MVCSContext
     protected override void mapBindings()
     {
         commandBinder.Bind<StartSignal>().To<StartCommand>().Once();
-        commandBinder.Bind<CallHttpRequestSignal>().To<CallHttpCommand>();
-        commandBinder.Bind<SelectCharSingal>().To<SelectCharCommand>();
+        commandBinder.Bind<CallLoginHttpSingal>().To<CallLoginHttpCommand>();
+        commandBinder.Bind<CallGetHttpSingal>().To<CallGetHttpCommand>();
+        commandBinder.Bind<ActivePanelSingal>().To<PanelActiveCommand>();
         commandBinder.Bind<LoginByIdentySingal>().To<LoginByIndentityCommand>();
+
         injectionBinder.Bind<ILoginModel>().To<LoginModel>().ToSingleton();
-        mediationBinder.Bind<LoginPanelView>().To<LoginPanelViewMediator>();
-        injectionBinder.Bind<IHttpLoginService>().To<HttpLoginService>().ToSingleton();
+        injectionBinder.Bind<IHttpRequestService>().To<HttpRequestService>().ToSingleton();
         injectionBinder.Bind<HttpRequestSignal>().ToSingleton();
+
+        mediationBinder.Bind<LoginPanelView>().To<LoginPanelViewMediator>();
         mediationBinder.Bind<MainView>().To<MainViewMediator>();
+        mediationBinder.Bind<SettingPanelView>().To<SettingPanelViewMediator>();
         mediationBinder.Bind<ControlPanelView>().To<ControlPanelViewMediator>();
         mediationBinder.Bind<NavBarView>().To<NavBarViewMediator>();
         mediationBinder.Bind<SelectCharView>().To<SelectCharViewMediator>();

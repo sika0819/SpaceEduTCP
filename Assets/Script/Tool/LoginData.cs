@@ -12,12 +12,10 @@ public enum Identity {
     Teacher,
     Student
 }
-public class LoginData  {
-    public string url;
-    public string name;
-    public string password;
+public class LoginData
+{
+    public string url { get; set; }
+    public string name { get; set; }
+    public string password { get; set; }
 }
-[Serializable]
-public class UserInfo {
-    public string userName;
-}
+

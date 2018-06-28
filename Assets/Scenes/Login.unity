@@ -329,6 +329,8 @@ GameObject:
   m_Component:
   - component: {fileID: 73097837}
   - component: {fileID: 73097838}
+  - component: {fileID: 73097840}
+  - component: {fileID: 73097839}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -383,7 +385,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -417,6 +419,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &73097839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73097836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
+--- !u!114 &73097840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73097836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 73097836}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &86936594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,7 +1842,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   ignoreTimeScale: 1
   delay: 0
-  duration: 1
+  duration: 0.2
   steeperCurves: 0
   tweenGroup: 0
   useFixedUpdate: 0
@@ -2196,7 +2235,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553375119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 211.99998, z: 0}
+  m_LocalPosition: {x: 0, y: 212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1904587473}
@@ -2266,6 +2305,8 @@ GameObject:
   m_Component:
   - component: {fileID: 563868057}
   - component: {fileID: 563868058}
+  - component: {fileID: 563868060}
+  - component: {fileID: 563868059}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2320,7 +2361,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -2354,6 +2395,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &563868059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563868056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 563868056}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
+--- !u!65 &563868060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563868056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
 --- !u!1 &566203355 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -2438,6 +2516,8 @@ GameObject:
   m_Component:
   - component: {fileID: 579155153}
   - component: {fileID: 579155154}
+  - component: {fileID: 579155156}
+  - component: {fileID: 579155155}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2492,7 +2572,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -2526,6 +2606,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &579155155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579155152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
+--- !u!114 &579155156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579155152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 579155152}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &603549041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +3082,8 @@ GameObject:
   m_Component:
   - component: {fileID: 708283390}
   - component: {fileID: 708283391}
+  - component: {fileID: 708283392}
+  - component: {fileID: 708283393}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3019,7 +3138,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -3053,6 +3172,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &708283392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708283389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
+--- !u!114 &708283393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708283389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 708283389}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &727780884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3218,8 @@ GameObject:
   m_Component:
   - component: {fileID: 727780885}
   - component: {fileID: 727780886}
+  - component: {fileID: 727780887}
+  - component: {fileID: 727780888}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3116,7 +3274,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -3150,6 +3308,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &727780887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727780884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
+--- !u!114 &727780888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727780884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 727780884}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &753363199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,7 +3902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 794999639}
-  hover: {r: 1, g: 1, b: 1, a: 1}
+  hover: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
   pressed: {r: 1, g: 1, b: 1, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
@@ -4275,6 +4470,8 @@ GameObject:
   m_Component:
   - component: {fileID: 938307252}
   - component: {fileID: 938307253}
+  - component: {fileID: 938307254}
+  - component: {fileID: 938307255}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -4329,7 +4526,7 @@ MonoBehaviour:
   mHeight: 50
   mDepth: 6
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 5.2
@@ -4363,6 +4560,43 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!65 &938307254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938307251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 0}
+  m_Center: {x: 130, y: 0, z: 0}
+--- !u!114 &938307255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938307251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 938307251}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!1 &945103125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,7 +4669,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   ignoreTimeScale: 1
   delay: 0
-  duration: 1
+  duration: 0.2
   steeperCurves: 0
   tweenGroup: 0
   useFixedUpdate: 0
@@ -5207,6 +5441,48 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: 2f2473f73b9ca724f9080d6d76009ea2, type: 2}
   mSpriteName: X
   mFillCenter: 1
+--- !u!1001 &1310300433
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1609908689}
+    m_Modifications:
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934595626829786, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b2ecae73fe5d3ba4d95c5b3e9ce61737, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1323857637
 Prefab:
   m_ObjectHideFlags: 0
@@ -5479,7 +5755,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3010
+  startingRenderQueue: 3013
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -5563,7 +5839,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3015
+  startingRenderQueue: 3018
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -5600,6 +5876,7 @@ GameObject:
   - component: {fileID: 1395820088}
   - component: {fileID: 1395820090}
   - component: {fileID: 1395820089}
+  - component: {fileID: 1395820091}
   m_Layer: 8
   m_Name: connect
   m_TagString: Untagged
@@ -5714,6 +5991,31 @@ MonoBehaviour:
   tweenTarget: {fileID: 1395820086}
   hover: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   pressed: {r: 0.7075472, g: 0.7019847, b: 0.69085974, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
+--- !u!114 &1395820091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395820086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1395820086}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -5934,6 +6236,54 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mFillCenter: 1
+--- !u!1 &1609908688 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1229125647353132, guid: 21488967c72e6af45acad43967c99b32,
+    type: 2}
+  m_PrefabInternal: {fileID: 2125656412}
+--- !u!4 &1609908689 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4811007546228040, guid: 21488967c72e6af45acad43967c99b32,
+    type: 2}
+  m_PrefabInternal: {fileID: 2125656412}
+--- !u!114 &1609908691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609908688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a20c1b21a3f94bb5b2d3b901c9aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 2125656413}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 2125656413}
+    relative: 0
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 2125656413}
+    relative: 1
+    absolute: 0
+  topAnchor:
+    target: {fileID: 2125656413}
+    relative: 1
+    absolute: 0
+  updateAnchors: 0
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 2
+  mHeight: 2
+  mDepth: 2
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 1
 --- !u!1 &1610921437
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,7 +7075,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3012
+  startingRenderQueue: 3015
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -7422,7 +7772,7 @@ Prefab:
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: leftAnchor.absolute
-      value: 57
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
@@ -7432,7 +7782,7 @@ Prefab:
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: rightAnchor.absolute
-      value: -43
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
@@ -7457,7 +7807,7 @@ Prefab:
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: startingRenderQueue
-      value: 3001
+      value: 3010
       objectReference: {fileID: 0}
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
@@ -7467,7 +7817,7 @@ Prefab:
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: mClipRange.x
-      value: -0.47802734
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
@@ -7482,12 +7832,59 @@ Prefab:
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: mClipRange.y
-      value: 1.7648163
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114446104412099988, guid: 21488967c72e6af45acad43967c99b32,
         type: 2}
       propertyPath: updateAnchors
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: cellWidth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811007546228040, guid: 21488967c72e6af45acad43967c99b32, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811007546228040, guid: 21488967c72e6af45acad43967c99b32, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -597
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: hideInactive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: keepWithinPanel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: animateSmoothly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: arrangement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: maxPerLine
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114765639946763710, guid: 21488967c72e6af45acad43967c99b32,
+        type: 2}
+      propertyPath: cellHeight
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523164413323150, guid: 21488967c72e6af45acad43967c99b32, type: 2}
+      propertyPath: m_Name
+      value: courseListView
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21488967c72e6af45acad43967c99b32, type: 2}

@@ -5,6 +5,6 @@
 using System;
 using strange.extensions.signal.impl;
 
-public class CallHttpRequestSignal : Signal<LoginData>
+public class CallLoginHttpSingal : Signal<LoginData>
 {
 }

@@ -8,7 +8,7 @@ public class LoginPanelView:View{
     
     public LoginSignal loginSignal;
     public LoginStateChangedSignal loginStateChangedSignal;
-   
+    
     private GameObject panelObejct;
     private UIPanel loginPanel;
     private UIInput userNameInput;
@@ -38,7 +38,6 @@ public class LoginPanelView:View{
         loginLabel.text = loginText;
     }
     public void OnLogin() {
-
         SetActive(false);
 
     }
