@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/StrangeIoC/examples/Assets/scenes/multiplecontexts/main.unity
-    guid: c8ed8038df3b647b68e612bd6fde86e0
+    path: Assets/Scenes/MainScene.unity
+    guid: 7869beb70e1af4249aa29abec59ce86c
   - enabled: 1
-    path: Assets/StrangeIoC/examples/Assets/scenes/multiplecontexts/game.unity
-    guid: 63cc202a6aefd4364ab9d942a24c0716
-  - enabled: 1
-    path: Assets/StrangeIoC/examples/Assets/scenes/multiplecontexts/social.unity
-    guid: ca117a9bbd0d14ec294e0e9ae05a2103
+    path: Assets/Scenes/VideoPlayer.unity
+    guid: b934d6f3bbc3e02488abe327ee26834d
   m_configObjects: {}

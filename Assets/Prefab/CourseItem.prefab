@@ -69,13 +69,14 @@ GameObject:
   - component: {fileID: 4934595626829786}
   - component: {fileID: 114995901819391502}
   - component: {fileID: 65630947643890518}
+  - component: {fileID: 114942753574717088}
   m_Layer: 8
   m_Name: CourseItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1569992329718564
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,8 +245,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 275, y: 224, z: 0}
-  m_Center: {x: 137.5, y: -112, z: 0}
+  m_Size: {x: 280, y: 224, z: 0}
+  m_Center: {x: 140, y: -112, z: 0}
 --- !u!114 &114039942460265360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,14 +277,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 3
-  mWidth: 272
+  mWidth: 277
   mHeight: 20
   mDepth: 2
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 13.6
+  aspectRatio: 13.85
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
@@ -328,30 +329,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 4934595626829786}
     relative: 0
-    absolute: 0
+    absolute: -2
   rightAnchor:
     target: {fileID: 4934595626829786}
     relative: 1
-    absolute: 0
+    absolute: -2
   bottomAnchor:
     target: {fileID: 4934595626829786}
-    relative: 0
-    absolute: 60
+    relative: 0.5
+    absolute: -40
   topAnchor:
     target: {fileID: 4934595626829786}
     relative: 1
-    absolute: 0
+    absolute: -12
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 275
-  mHeight: 164
+  mWidth: 280
+  mHeight: 140
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.6768292
+  aspectRatio: 2
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -371,7 +372,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  mTexture: {fileID: 2800000, guid: 20f7cab44eaf6e849a8b7131f390055a, type: 3}
+  mTexture: {fileID: 2800000, guid: df087cff40f9b384b9bc88cfb3640607, type: 3}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
@@ -405,14 +406,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 3
-  mWidth: 272
+  mWidth: 277
   mHeight: 20
   mDepth: 2
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 13.6
+  aspectRatio: 13.85
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
@@ -590,6 +591,31 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114942753574717088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546966430256366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1393031974818716}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick: []
 --- !u!114 &114995901819391502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,14 +646,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 0
-  mWidth: 275
+  mWidth: 280
   mHeight: 224
   mDepth: 0
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.2276785
+  aspectRatio: 1.25
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
