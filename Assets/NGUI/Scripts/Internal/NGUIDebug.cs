@@ -7,7 +7,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
-/// This class is meant to be used only internally. It's like LogTool.Log, but prints using OnGUI to screen instead.
+/// This class is meant to be used only internally. It's like Debug.Log, but prints using OnGUI to screen instead.
 /// </summary>
 
 [AddComponentMenu("NGUI/Internal/Debug")]
@@ -61,7 +61,7 @@ public class NGUIDebug : MonoBehaviour
 			mLines.Add(text);
 			CreateInstance();
 		}
-		else LogTool.Log(text);
+		else Debug.Log(text);
 	}
 
 	/// <summary>

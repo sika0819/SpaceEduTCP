@@ -64,7 +64,7 @@ namespace Frankfort.Threading.Internal
 
             ThreadWorkDistribution<T>[] workerPackages = new ThreadWorkDistribution<T>[packages];
             Type delegateType = typeof(D);
-            //LogTool.Log(delegateType.FullName);
+            //Debug.Log(delegateType.FullName);
 
             int count = 0;
             for (int i = 0; i < packages; i++)
@@ -239,7 +239,7 @@ namespace Frankfort.Threading.Internal
             if (workLoad == null || workLoad.Length == 0)
                 return;
 
-            //LogTool.Log("Execute ID: " + ID + ", startIndex: " + startIndex  + ", endIndex: " + endIndex);
+            //Debug.Log("Execute ID: " + ID + ", startIndex: " + startIndex  + ", endIndex: " + endIndex);
             if (workloadExecutor != null)
             {
                 for (int i = startIndex; i < endIndex && !_isAborted; i++)

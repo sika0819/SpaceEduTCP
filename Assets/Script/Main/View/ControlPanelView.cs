@@ -15,6 +15,7 @@ public class ControlPanelView: View
     private GameObject courseObject;
     private GameObject navBarObject;
     public NavBarView navBar;
+    public GameObject ServerObj;
     public void Init(GameObject go)
     {
         panelObejct = go;

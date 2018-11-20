@@ -9,6 +9,6 @@ public class ChangeSceneCommand : Command {
     public SceneData sceneData { get; set; }
     public override void Execute()
     {
-        SceneManager.LoadScene(sceneData.SceneName);
+        SceneManager.LoadSceneAsync(sceneData.SceneName);
     }
 }

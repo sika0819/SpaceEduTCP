@@ -25,7 +25,7 @@ namespace Frankfort.Threading.Internal
                 Thread currentThread = Thread.CurrentThread;
                 if(currentThread.GetApartmentState() == ApartmentState.MTA || currentThread.ManagedThreadId > 1 || currentThread.IsThreadPoolThread)
                 {
-                    LogTool.Log("Trying to Init a WorkerThread as the MainThread! ");
+                    Debug.Log("Trying to Init a WorkerThread as the MainThread! ");
                 }
                 else
                 {

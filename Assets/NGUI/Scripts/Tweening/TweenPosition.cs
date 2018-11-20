@@ -51,7 +51,7 @@ public class TweenPosition : UITweener
 		}
 	}
 
-    protected override void Awake () { mRect = GetComponent<UIRect>(); }
+	public override void Awake () { mRect = GetComponent<UIRect>(); }
 
 	/// <summary>
 	/// Tween the value.

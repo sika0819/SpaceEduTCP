@@ -509,7 +509,7 @@ static public class FreeType
 			//int baseline = ((ascender - descender) >> 1);
 			//if ((baseline & 1) == 1) --baseline;
 
-			//LogTool.Log(ascender + " " + descender + " " + baseline);
+			//Debug.Log(ascender + " " + descender + " " + baseline);
 
 			// Space character is not renderable
 			FT_Load_Glyph(face, FT_Get_Char_Index(face, 32), FT_LOAD_DEFAULT);

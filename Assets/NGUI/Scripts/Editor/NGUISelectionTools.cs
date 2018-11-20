@@ -83,7 +83,7 @@ public class NGUISelectionTools
 	{
 		if (HasValidSelection())
 		{
-			LogTool.Log("Selection depends on the following assets:\n\n" + GetDependencyText(Selection.objects, false));
+			Debug.Log("Selection depends on the following assets:\n\n" + GetDependencyText(Selection.objects, false));
 		}
 	}
 	

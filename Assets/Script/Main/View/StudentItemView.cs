@@ -14,7 +14,7 @@ public class StudentItemView:View  {
     private UILabel ipLabel;
     private UILabel userNameLabel;
     private UIToggle checkBox;
-    public AsyncSocketState studentState;
+    
     private UIGrid grid;
     public string IPAddress {
         set
@@ -38,6 +38,8 @@ public class StudentItemView:View  {
             return userNameLabel.text;
         }
     }
+    public StudentItem studentItem;
+    public AsyncSocketState studentState;
     public void InitItemView(GameObject copy) {
         grid = copy.transform.parent.GetComponent<UIGrid>();
         grid.enabled = true;
@@ -50,7 +52,12 @@ public class StudentItemView:View  {
         
         grid.Reposition();
     }
-
+    public void InitItem(StudentItem item) {
+        studentItem = item;
+        UserName = item.UserName;
+        IPAddress = item.IPAddress;
+        studentState = item.studentState;
+    }
     public void Destory()
     {
         ItemObject.transform.SetParent(grid.transform.parent);

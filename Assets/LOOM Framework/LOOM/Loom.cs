@@ -331,7 +331,7 @@ public static class Loom
     /// <summary>
     /// Fire and forget: The MainThread will execute this method witout any arguments to pass, nothing will be returned.
     /// </summary>
-    /// <param name="dispatchCall">Example: "() => LogTool.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name)" </param>
+    /// <param name="dispatchCall">Example: "() => Debug.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name)" </param>
     /// <param name="waitForExecution">Freezes the thread, waiting for the MainThread to execute & finish the "dispatchCall".</param>
     /// <param name="safeMode">Executes all the computations within try-catch events, logging it the message + stacktrace</param>
     public static void DispatchToMainThread(ThreadDispatchDelegate dispatchCall, bool waitForExecution = false, bool safeMode = true)
@@ -345,7 +345,7 @@ public static class Loom
     /// <summary>
     /// When executed by the MainThread, this argument will be passed to the "dispatchCall";
     /// </summary>
-    /// <param name="dispatchCall">Example: "(object obj) => LogTool.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
+    /// <param name="dispatchCall">Example: "(object obj) => Debug.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
     /// <param name="dispatchArgument">Once the MainThread executes this action, the argument will be passed to the delegate</param>
     /// <param name="waitForExecution">Freezes the thread, waiting for the MainThread to execute & finish the "dispatchCall".</param>
     /// <param name="safeMode">Executes all the computations within try-catch events, logging it the message + stacktrace</param>
@@ -362,7 +362,7 @@ public static class Loom
     /// Allows you to dispatch an delegate returning an object (for example: a newly instantiated gameobject) that is directly available in your ThreadPool-Thread.
     /// Because the thread you are dispatching from is not the MainThread, your ThreadPool-thread needs to wait till the MainThread executed the method, and the returned value can be used directly
     /// </summary>
-    /// <param name="dispatchCall">Example: "(object obj) => LogTool.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
+    /// <param name="dispatchCall">Example: "(object obj) => Debug.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
     /// <param name="dispatchArgument">Once the MainThread executes this action, the argument will be passed to the delegate</param>
     /// <param name="safeMode">Executes all the computations within try-catch events, logging it the message + stacktrace</param>
     /// <returns>After the MainThread has executed the "dispatchCall" (and the worker-thread has been waiting), it will return whatever the dispatchCall returns to the worker-thread</returns>
@@ -376,7 +376,7 @@ public static class Loom
     /// Allows you to dispatch an delegate returning an object (for example: a newly instantiated gameobject) that is directly available in your ThreadPool-Thread.
     /// Because the thread you are dispatching from is not the MainThread, your ThreadPool-thread needs to wait till the MainThread executed the method, and the returned value can be used directly
     /// </summary>
-    /// <param name="dispatchCall">Example: "(object obj) => LogTool.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
+    /// <param name="dispatchCall">Example: "(object obj) => Debug.Log("This will be fired from the MainThread: " + System.Threading.Thread.CurrentThread.Name + "\nObject: " + obj.toString())"</param>
     /// <param name="safeMode">Executes all the computations within try-catch events, logging it the message + stacktrace</param>
     /// <returns>After the MainThread has executed the "dispatchCall" (and the worker-thread has been waiting), it will return whatever the dispatchCall returns to the worker-thread</returns>
     public static object DispatchToMainThreadReturn(ThreadDispatchDelegateReturn dispatchCall, bool safeMode = true)

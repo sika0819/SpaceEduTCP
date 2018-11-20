@@ -34,7 +34,6 @@ public class ClientTest : MonoBehaviour {
         password = SystemInfo.deviceUniqueIdentifier;
         SaveDataController.Init(Application.persistentDataPath, "ClientData.DATA");
         clientConnectThread = Loom.StartSingleThread(ClientConnect, System.Threading.ThreadPriority.Normal, true);
-        Application.quitting += Application_quitting;
     }
 
   
@@ -185,7 +184,7 @@ public class ClientTest : MonoBehaviour {
     public void Quit() {
         Application.Quit();
     }
-    private void Application_quitting()
+    private void OnApplicationQuit()
     {
 
         CloseClient();

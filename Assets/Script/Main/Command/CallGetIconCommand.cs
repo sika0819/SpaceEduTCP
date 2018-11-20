@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class CallGetIconCommand : Command {
     [Inject]
-    public Course course { get; set; }
-    
+    public CourseRequest requestData { get; set; }
     [Inject]
     public IHttpRequestService httpRequestService { get; set; }
+
     public CallGetIconCommand() {
-       
     }
     public override void Execute()
     {
         Retain();
-        httpRequestService.GetTextureRequest(course.thumb);
+        httpRequestService.GetTextureRequest(requestData.textureUrl, requestData.thumb);
     }
 
 }

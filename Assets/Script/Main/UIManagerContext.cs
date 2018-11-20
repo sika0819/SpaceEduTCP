@@ -30,6 +30,7 @@ public class UIManagerContext : MVCSContext
         base.Start();
         StartSignal startSignal = injectionBinder.GetInstance<StartSignal>();
         startSignal.Dispatch();
+
         return this;
     }
     protected override void mapBindings()
@@ -41,11 +42,14 @@ public class UIManagerContext : MVCSContext
         commandBinder.Bind<CallHttpGetIconSignal>().To<CallGetIconCommand>();
         commandBinder.Bind<LoginByIdentySingal>().To<LoginByIndentityCommand>();
         commandBinder.Bind<ChangeSceneSignal>().To<ChangeSceneCommand>();
+        injectionBinder.Bind<ITopicList>().To<TopicList>().ToSingleton();
+        injectionBinder.Bind<ReceiveIconSignal>().ToSingleton();
         injectionBinder.Bind<ILoginModel>().To<LoginModel>().ToSingleton();
         injectionBinder.Bind<IHttpRequestService>().To<HttpRequestService>().ToSingleton();
-        injectionBinder.Bind<HttpRequestSignal>().ToSingleton();
-        injectionBinder.Bind<ReceiveIconSignal>().ToSingleton();
+        injectionBinder.Bind<HttpRequestSignal>().ToSingleton();    
+        injectionBinder.Bind<LogoutSignal>().ToSingleton();
         injectionBinder.Bind<GenerateCourseListSignal>().ToSingleton();
+        injectionBinder.Bind<ITextureListModel>().To<TextureListModel>().ToSingleton();
         mediationBinder.Bind<LoginPanelView>().To<LoginPanelViewMediator>();
         mediationBinder.Bind<MainView>().To<MainViewMediator>();
         mediationBinder.Bind<SettingPanelView>().To<SettingPanelViewMediator>();

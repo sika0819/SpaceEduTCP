@@ -1453,7 +1453,7 @@ public class UIWidget : UIRect
 				if (geometry.hasVertices)
 				{
 					// Want to see what's being filled? Uncomment this line.
-					//LogTool.Log("Fill " + name + " (" + Time.frameCount + ")");
+					//Debug.Log("Fill " + name + " (" + Time.frameCount + ")");
 
 					if (mMatrixFrame != frame)
 					{
@@ -1480,7 +1480,7 @@ public class UIWidget : UIRect
 		else if (mMoved && geometry.hasVertices)
 		{
 			// Want to see what's being moved? Uncomment this line.
-			//LogTool.Log("Moving " + name + " (" + Time.frameCount + ")");
+			//Debug.Log("Moving " + name + " (" + Time.frameCount + ")");
 
 			if (mMatrixFrame != frame)
 			{

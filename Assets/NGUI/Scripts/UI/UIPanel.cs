@@ -1691,7 +1691,7 @@ public class UIPanel : UIRect
 				if (w.UpdateGeometry(frame))
 				{
 					changed = true;
-					//LogTool.Log("Geometry changed: " + w.name + " " + frame, w);
+					//Debug.Log("Geometry changed: " + w.name + " " + frame, w);
 
 					if (!mRebuild)
 					{

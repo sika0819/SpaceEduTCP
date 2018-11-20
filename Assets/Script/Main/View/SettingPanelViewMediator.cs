@@ -9,10 +9,14 @@ public class SettingPanelViewMediator : Mediator {
 
     [Inject]
     public SettingPanelView settingPanel { get; set; }
+  
     public override void OnRegister()
     {
  
         
     }
-
+     public override void OnRemove()
+    {
+        
+    }
 }

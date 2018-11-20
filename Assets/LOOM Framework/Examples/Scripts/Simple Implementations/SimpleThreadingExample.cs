@@ -51,36 +51,36 @@ public class SimpleThreadingExample : MonoBehaviour
     //--------------- Managing a simple single Thread --------------------
     private void EndingSingleThreadCoroutine()
     {
-        LogTool.Log("Starting an Coroutine on a seperate Thread!");
+        Debug.Log("Starting an Coroutine on a seperate Thread!");
 
         Loom.WaitForNextFrame(30);
-        Loom.DispatchToMainThread(() => LogTool.Log("I waited atleast 30 frames. Whats the current frameCount? : " + Time.frameCount), true);
+        Loom.DispatchToMainThread(() => Debug.Log("I waited atleast 30 frames. Whats the current frameCount? : " + Time.frameCount), true);
 
         Loom.WaitForSeconds(10);
-        Loom.DispatchToMainThread(() => LogTool.Log("I waited atleast 10 seconds. Whats the current frameCount? : " + Time.frameCount), true);
+        Loom.DispatchToMainThread(() => Debug.Log("I waited atleast 10 seconds. Whats the current frameCount? : " + Time.frameCount), true);
 
         //Throw error to show safemode nicely throws errors in the MainThread.
 
         Debug.LogWarning("About the throw an error...");
         throw new Exception("This is an safe Error and should showup in the Console");
 
-        LogTool.Log("It won't get here, but the Thread will die anyways.");
+        Debug.Log("It won't get here, but the Thread will die anyways.");
     } 
 
 
 
     private void ContinuesSingleThreadCoroutine()
     {
-        LogTool.Log("Starting an never ending Coroutine on a seperate Thread!");
+        Debug.Log("Starting an never ending Coroutine on a seperate Thread!");
         while (true)
         {
             Loom.WaitForNextFrame(10); 
-            Loom.DispatchToMainThread(() => LogTool.Log("I waited atleast 10 frames. Whats the current frameCount? : " + Time.frameCount), true);
+            Loom.DispatchToMainThread(() => Debug.Log("I waited atleast 10 frames. Whats the current frameCount? : " + Time.frameCount), true);
 
             Loom.WaitForSeconds(1); 
-            Loom.DispatchToMainThread(() => LogTool.Log("I waited atleast 1 second. Whats the current frameCount? : " + Time.frameCount), true);
+            Loom.DispatchToMainThread(() => Debug.Log("I waited atleast 1 second. Whats the current frameCount? : " + Time.frameCount), true);
         }
-        LogTool.Log("It will never get here, but thats oke...");
+        Debug.Log("It will never get here, but thats oke...");
     } 
     //--------------- Managing a simple single Thread --------------------
 
@@ -106,10 +106,10 @@ public class SimpleThreadingExample : MonoBehaviour
 
         if (myThreadScheduler.isBusy) //Threaded work didn't finish in the meantime: time to abort.
         {
-            LogTool.Log("Terminate all worker Threads.");
+            Debug.Log("Terminate all worker Threads.");
             myThreadScheduler.AbortASyncThreads();
             
-            LogTool.Log("Terminate thread A & B.");
+            Debug.Log("Terminate thread A & B.");
             if (threadA != null && threadA.IsAlive)
                 threadA.Interrupt();
 
@@ -149,9 +149,9 @@ public class LotsOfNumbers : IThreadWorkerObject
             if (i == (maxIterations / 2))
             {
                 Loom.DispatchToMainThread(() =>
-                    LogTool.Log("Dispatch: is this the MainThread? " + Loom.CheckIfMainThread()), true);
+                    Debug.Log("Dispatch: is this the MainThread? " + Loom.CheckIfMainThread()), true);
 
-                LogTool.Log("From WorkerThread: is this the MainThread? " + Loom.CheckIfMainThread());
+                Debug.Log("From WorkerThread: is this the MainThread? " + Loom.CheckIfMainThread());
 
                 GameObject cube = (GameObject)Loom.DispatchToMainThreadReturn(TestThreadSafeDispatch, true);
                 Loom.DispatchToMainThread(() => cube.name += "_RenamedFrom: " + Thread.CurrentThread.Name);

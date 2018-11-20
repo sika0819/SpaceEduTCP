@@ -179,7 +179,7 @@ public class NGUIJson
 
 		// Sort imported sprites alphabetically
 		atlas.spriteList.Sort(CompareSprites);
-		LogTool.Log("Imported " + atlas.spriteList.Count + " sprites");
+		Debug.Log("Imported " + atlas.spriteList.Count + " sprites");
 	}
 
 	/// <summary>
@@ -739,7 +739,7 @@ s += Char.ConvertFromUtf32((int)codePoint);
 	protected static bool serializeValue( object value, StringBuilder builder )
 	{
 		// Type t = value.GetType();
-		// LogTool.Log("type: " + t.ToString() + " isArray: " + t.IsArray);
+		// Debug.Log("type: " + t.ToString() + " isArray: " + t.IsArray);
 
 		if( value == null )
 		{

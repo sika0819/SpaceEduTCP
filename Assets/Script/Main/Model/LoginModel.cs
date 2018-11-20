@@ -8,6 +8,8 @@ public class LoginModel : ILoginModel {
     public long expires { get; set; }
     public string userName { get; set; }
 
+    public Identity identity { get; set; }
+
     public void ConvertType(LoginJsonData loginData)
     {
         token = loginData.token;

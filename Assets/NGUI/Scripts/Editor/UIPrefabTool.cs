@@ -368,7 +368,7 @@ public class UIPrefabTool : EditorWindow
 				GeneratePreview(ent, null);
 				return ent;
 			}
-			else LogTool.Log("No GUID");
+			else Debug.Log("No GUID");
 		}
 		return null;
 	}

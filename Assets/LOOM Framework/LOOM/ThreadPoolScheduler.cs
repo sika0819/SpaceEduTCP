@@ -96,13 +96,13 @@ namespace Frankfort.Threading
 
         protected virtual void OnApplicationQuit()
         {
-            LogTool.Log("ThreadPoolScheduler.OnApplicationQuit!");
+            Debug.Log("ThreadPoolScheduler.OnApplicationQuit!");
             AbortASyncThreads();    
         }
 
         protected virtual void OnDestroy()
 		{
-			LogTool.Log("ThreadPoolScheduler.OnDestroy!");
+			Debug.Log("ThreadPoolScheduler.OnDestroy!");
             AbortASyncThreads();
         }
         #endregion
@@ -200,7 +200,7 @@ namespace Frankfort.Threading
         private IEnumerator WaitForCompletion()
         {
             if (DebugMode)
-                LogTool.Log(" ----- WaitForCompletion: " + Thread.CurrentThread.ManagedThreadId);
+                Debug.Log(" ----- WaitForCompletion: " + Thread.CurrentThread.ManagedThreadId);
             
 			while (!_isAborted)
 			{
@@ -217,7 +217,7 @@ namespace Frankfort.Threading
         
                 int unhandledPackagesCount = GetUnhandledFinishedPackagesCount();
                 if (DebugMode)
-                    LogTool.Log(" ----- unhandledPackages: " + unhandledPackagesCount + " ( out of: " + finishedObjectsCount + " completed so far...)");
+                    Debug.Log(" ----- unhandledPackages: " + unhandledPackagesCount + " ( out of: " + finishedObjectsCount + " completed so far...)");
 
                 if (unhandledPackagesCount > 0)
                 {
@@ -238,7 +238,7 @@ namespace Frankfort.Threading
 			if(!_isAborted)
 			{
 				if (DebugMode)
-	                LogTool.Log(" ----- Coroutine knows its done!");
+	                Debug.Log(" ----- Coroutine knows its done!");
 
 	            IThreadWorkerObject[] workedObjects = GetWorkerObjectsFromPackages();
 	            
@@ -295,13 +295,13 @@ namespace Frankfort.Threading
 			
 			if (providerThread != null && providerThread.IsAlive)
 			{
-				LogTool.Log("ThreadPoolScheduler.AbortASyncThreads - Interrupt!");
+				Debug.Log("ThreadPoolScheduler.AbortASyncThreads - Interrupt!");
 				providerThread.Interrupt();
 				providerThread.Join();
 			}
 			else
 			{
-				LogTool.Log("ThreadPoolScheduler.AbortASyncThreads!");
+				Debug.Log("ThreadPoolScheduler.AbortASyncThreads!");
 			}
 
 			_providerThreadBusy = false;
@@ -337,7 +337,7 @@ namespace Frankfort.Threading
             int startBurst = Mathf.Clamp(workData.maxWorkingThreads, 1, totalWork);
 
             if (DebugMode)
-                LogTool.Log(" ----- InvokeASyncThreadPoolWork. startBurst: " + startBurst + ", totalWork: " + totalWork);
+                Debug.Log(" ----- InvokeASyncThreadPoolWork. startBurst: " + startBurst + ", totalWork: " + totalWork);
             
             //--------------- Initial Startup burst --------------------
             for (int i = 0; i < startBurst && !_isAborted; i++)
@@ -353,7 +353,7 @@ namespace Frankfort.Threading
 
 
             if (DebugMode)
-                LogTool.Log(" ----- Burst with WorkerObjects being processed!");
+                Debug.Log(" ----- Burst with WorkerObjects being processed!");
 
             //--------------- Create a new Thread to keep the Threadpool running  & cores saturated! --------------------
             workObjectIndex = startBurst; //at this point the amount of running WorkObjects/Threads is equal to the startBurst;
@@ -373,7 +373,7 @@ namespace Frankfort.Threading
 
 
             if (DebugMode)
-                LogTool.Log(" ----- all packages fed to the pool!");
+                Debug.Log(" ----- all packages fed to the pool!");
             
             //--------------- Wait till all are finished! --------------------
             //All WorkObjects have been set to work, but the last few Threads might still be pending!
@@ -387,7 +387,7 @@ namespace Frankfort.Threading
 
 
             if (DebugMode)
-                LogTool.Log(" ----- PROVIDER THREAD DONE");
+                Debug.Log(" ----- PROVIDER THREAD DONE");
     
             //DONE!
             _providerThreadBusy = false;

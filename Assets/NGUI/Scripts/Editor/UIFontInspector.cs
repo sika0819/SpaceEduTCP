@@ -210,7 +210,7 @@ public class UIFontInspector : Editor
 					BMFontReader.Load(mFont.bmFont, NGUITools.GetHierarchy(mFont.gameObject), data.bytes);
 					mFont.MarkAsChanged();
 					resetWidthHeight = true;
-					LogTool.Log("Imported " + mFont.bmFont.glyphCount + " characters");
+					Debug.Log("Imported " + mFont.bmFont.glyphCount + " characters");
 				}
 			}
 

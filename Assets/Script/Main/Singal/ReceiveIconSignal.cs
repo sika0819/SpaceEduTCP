@@ -3,6 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReceiveIconSignal : Signal<Texture2D> {
+public class ReceiveIconSignal : Signal<Texture> {
     
 }

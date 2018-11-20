@@ -18,7 +18,6 @@ public class ServerTest : MonoBehaviour {
     Thread checkHeartBeat;
     public string ipAddress = "127.0.0.1";
     public int tcpPort=10086;
-    public UILabel logText;
     public bool isServerStart = false;
     public bool isTcpStart = false;
     public GameObject studentCopy;
@@ -31,8 +30,7 @@ public class ServerTest : MonoBehaviour {
         SaveDataController.Init(Application.persistentDataPath, "ServerData.DATA");
         clientDic = new Dictionary<string, string>();
         studentDic = new Dictionary<string, StudentItemView>();
-        Application.quitting += Application_quitting;
-        ipAddress = Network.player.ipAddress;
+
     }
     public void OnToggleServer(UILabel buttonText) {
         isServerStart = !isServerStart;
@@ -293,7 +291,7 @@ public class ServerTest : MonoBehaviour {
         Application.Quit();
     }
 
-    private void Application_quitting()
+    private void OnApplicationQuit()
     {
         if(server!=null)
         server.SendAll(NetworkCommand.EXIT);

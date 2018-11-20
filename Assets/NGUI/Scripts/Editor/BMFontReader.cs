@@ -90,7 +90,7 @@ static public class BMFontReader
 							glyph.advance	= GetInt(split[8]);
 							glyph.channel	= channel;
 						}
-						else LogTool.Log("Char: " + split[1] + " (" + id + ") is NULL");
+						else Debug.Log("Char: " + split[1] + " (" + id + ") is NULL");
 					}
 					else
 					{

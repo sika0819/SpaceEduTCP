@@ -14,5 +14,6 @@ public class PanelActiveCommand : Command {
         Debug.Log(panelData);
         MainView mainView = mainViewObject.GetComponent<MainView>();
         mainView.SetPanelActive(panelData);
+       
     }
 }

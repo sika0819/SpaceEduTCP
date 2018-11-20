@@ -49,6 +49,7 @@ public class CallLoginHttpCommand : Command
         service.fulfillSignal.RemoveListener(onComplete);
         LoginJsonData loginData = JsonUtility.FromJson<LoginJsonData>(json);
         model.ConvertType(loginData);
+        PlayerPrefs.SetString("token", loginData.token);
         Release();
     }
 

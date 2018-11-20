@@ -59,12 +59,12 @@ namespace Frankfort.Threading.Internal
             {
                 if (unityRunning)
                 {
-                    //LogTool.Log("UNITY INACTIVE: About to sleep for 100 ms: " + Thread.CurrentThread.ManagedThreadId);
+                    //Debug.Log("UNITY INACTIVE: About to sleep for 100 ms: " + Thread.CurrentThread.ManagedThreadId);
                     Thread.Sleep(100);
                 }
                 else
                 {
-                    //LogTool.Log("UNITY NOT RUNNING: About to abort: " + Thread.CurrentThread.ManagedThreadId);
+                    //Debug.Log("UNITY NOT RUNNING: About to abort: " + Thread.CurrentThread.ManagedThreadId);
                     Thread.CurrentThread.Interrupt();
 					Thread.CurrentThread.Join();
                 }
@@ -129,19 +129,19 @@ namespace Frankfort.Threading.Internal
         {
             unityRunning = false;
             UpdateStatus();
-            LogTool.Log("UnityActivityWatchdog: OnApplicationQuit");
+            Debug.Log("UnityActivityWatchdog: OnApplicationQuit");
         }
         private void OnApplicationPause(bool pause)
         {
             unityPaused = pause;
             UpdateStatus();
-            LogTool.Log("UnityActivityWatchdog: OnApplicationPauze [" + pause + "]");
+            Debug.Log("UnityActivityWatchdog: OnApplicationPauze [" + pause + "]");
         }
         private void OnApplicationFocus(bool focus)
         {
             unityFocused = focus;
             UpdateStatus();
-            LogTool.Log("UnityActivityWatchdog: OnApplicationFocus [" + focus + "]");
+            Debug.Log("UnityActivityWatchdog: OnApplicationFocus [" + focus + "]");
         }
 
         private static void UpdateStatus()

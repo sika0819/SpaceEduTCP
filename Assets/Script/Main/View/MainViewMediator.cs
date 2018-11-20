@@ -12,6 +12,7 @@ public class MainViewMediator : Mediator {
     public override void OnRegister()
     {
         OnShowLogin();
+        
     }
 
 
@@ -21,6 +22,8 @@ public class MainViewMediator : Mediator {
 
     public override void OnRemove()
     {
+        
        
+
     }
 }

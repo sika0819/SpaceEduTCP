@@ -1768,7 +1768,7 @@ public class UICamera : MonoBehaviour
 		{
 			++mNotifying;
 			//if (currentScheme == ControlScheme.Controller)
-			//	LogTool.Log((go != null ? "[" + go.name + "]." : "[global].") + funcName + "(" + obj + ");", go);
+			//	Debug.Log((go != null ? "[" + go.name + "]." : "[global].") + funcName + "(" + obj + ");", go);
 			go.SendMessage(funcName, obj, SendMessageOptions.DontRequireReceiver);
 			if (mGenericHandler != null && mGenericHandler != go)
 				mGenericHandler.SendMessage(funcName, obj, SendMessageOptions.DontRequireReceiver);

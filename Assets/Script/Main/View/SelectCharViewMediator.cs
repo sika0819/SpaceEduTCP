@@ -13,22 +13,25 @@ public class SelectCharViewMediator : Mediator {
     public LoginByIdentySingal loginByIdentySingal{get;set;}
     [Inject]
     public CallGetHttpSingal callGetHttpSingal { get; set; }
+   
     public override void OnRegister()
     {
         
         selectCharView.ClickStudentLogin(new EventDelegate(OnStudentLogin));
         selectCharView.ClickTeacherLogin(new EventDelegate(OnTeacherLogin));
-        
     }
-    
+
+
     private void OnTeacherLogin()
     {
+        ServerController.Instance.CloseServer();
         loginByIdentySingal.Dispatch(Identity.Teacher);
         callGetHttpSingal.Dispatch(requestUrl.courses);
     }
 
     private void OnStudentLogin()
     {
+        ClientController.Instance.CloseClient();
         loginByIdentySingal.Dispatch(Identity.Student);
     }
     public override void OnRemove()

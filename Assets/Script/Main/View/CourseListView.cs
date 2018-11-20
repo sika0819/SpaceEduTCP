@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CourseListView : View {
     private GameObject ListObject;
-    public List<CourseItemView> courseList;
+    public List<CourseItemViewMediator> courseList;
     private UIGrid grid;
     private GameObject itemViewObject;
     
     public void Init(GameObject go) {
         ListObject = go;
-        courseList = new List<CourseItemView>();
+        courseList = new List<CourseItemViewMediator>();
         grid = ListObject.transform.Find("UIGrid").GetComponent<UIGrid>();
         itemViewObject = grid.transform.Find("CourseItem").gameObject;
       
@@ -25,7 +25,13 @@ public class CourseListView : View {
             grid.AddChild(item.transform);
             CourseItemViewMediator courseItemViewMediator = item.GetComponent<CourseItemViewMediator>();
             courseItemViewMediator.OnSetCourse(model.courses[i]);
-            courseList.Add(view);
+            courseList.Add(courseItemViewMediator);
+        }
+    }
+    public void ClearCourseList() {
+        for (int i = courseList.Count-1; i >=0; i--) {
+            courseList[i].DestoryCourse();
+            courseList.RemoveAt(i);
         }
     }
 }

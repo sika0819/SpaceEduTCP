@@ -221,7 +221,7 @@ namespace Frankfort.Threading.Internal
         public static void AbortRunningThreads()
         {
             ValidateThreadStates();
-            LogTool.Log("Abort running Threads: " + startedThreads.Count);
+            Debug.Log("Abort running Threads: " + startedThreads.Count);
             foreach (Thread thread in startedThreads)
 			{
 				thread.Interrupt();

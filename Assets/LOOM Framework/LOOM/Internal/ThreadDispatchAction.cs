@@ -108,7 +108,7 @@ namespace Frankfort.Threading.Internal
                 catch (Exception e)
                 {
                     //At this point, we should always be in the MainThread anyways...
-                    LogTool.Log(e.Message + e.StackTrace);
+                    UnityEngine.Debug.Log(e.Message + e.StackTrace);
                 }
             }
             else

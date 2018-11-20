@@ -491,9 +491,9 @@ static public class NGUITools
 #if UNITY_EDITOR
 		if (obj)
 		{
-			//if (obj is Component) LogTool.Log(NGUITools.GetHierarchy((obj as Component).gameObject), obj);
-			//else if (obj is GameObject) LogTool.Log(NGUITools.GetHierarchy(obj as GameObject), obj);
-			//else LogTool.Log("Hmm... " + obj.GetType(), obj);
+			//if (obj is Component) Debug.Log(NGUITools.GetHierarchy((obj as Component).gameObject), obj);
+			//else if (obj is GameObject) Debug.Log(NGUITools.GetHierarchy(obj as GameObject), obj);
+			//else Debug.Log("Hmm... " + obj.GetType(), obj);
 			UnityEditor.EditorUtility.SetDirty(obj);
 		}
 #endif

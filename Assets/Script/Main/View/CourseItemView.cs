@@ -33,7 +33,11 @@ public class CourseItemView : View {
         DateLabel.text = model.updated;
         
     }
-    public void SetIcon(Texture2D icon) {
+    public void SetIcon(Texture icon) {
         ThumbTexture.mainTexture = icon;
+    }
+    public void DestoryCourse()
+    {
+        Destroy(gameObject);
     }
 }

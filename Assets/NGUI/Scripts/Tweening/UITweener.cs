@@ -159,8 +159,11 @@ public abstract class UITweener : MonoBehaviour
     /// <summary>
     /// Update as soon as it's started so that there is no delay.
     /// </summary>
-    protected virtual void Awake() { }
-	protected virtual void Start () { DoUpdate(); }
+    public virtual void Awake()
+    {
+        
+    }
+    protected virtual void Start () { DoUpdate(); }
 	protected void Update () { if (!useFixedUpdate) DoUpdate(); }
 	protected void FixedUpdate () { if (useFixedUpdate) DoUpdate(); }
 

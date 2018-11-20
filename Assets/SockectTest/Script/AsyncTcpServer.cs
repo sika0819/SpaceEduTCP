@@ -118,6 +118,7 @@ public class AsyncTcpServer:IDisposable {//异步Tcp服务器
         }
     }
     public void SendAll(string msg) {
+        LogTool.Log("Send:" + msg);
         if (clientCount > 0)
         {
             List<AsyncSocketState> clientList = new List<AsyncSocketState>(clientDic.Values);
@@ -281,8 +282,9 @@ public class AsyncTcpServer:IDisposable {//异步Tcp服务器
         }
     }
     public void CloseAllClient() {
-        foreach (var item in clientDic) {
-            Close(item.Value);
+        List<AsyncSocketState> client = new List<AsyncSocketState>(clientDic.Values);
+        foreach (var item in client) {
+            Close(item);
         }
         clientDic.Clear();
         clientDic = null;

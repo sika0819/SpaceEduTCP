@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CallHttpGetIconSignal : Signal<Course>
+public class CallHttpGetIconSignal : Signal<CourseRequest>
 {
 
 }

@@ -10,7 +10,7 @@ namespace Frankfort.Threading.Internal
         {
             if (MainThreadWatchdog.CheckIfMainThread())
             {
-                LogTool.Log("Its not allowed to put the MainThread to sleep!");
+                Debug.Log("Its not allowed to put the MainThread to sleep!");
                 return;
             }
 			
@@ -32,7 +32,7 @@ namespace Frankfort.Threading.Internal
             {
                 if (MainThreadWatchdog.CheckIfMainThread())
                 {
-                    LogTool.Log("Its not allowed to put the MainThread to sleep!");
+                    Debug.Log("Its not allowed to put the MainThread to sleep!");
                     return;
                 }
 

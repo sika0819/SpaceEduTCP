@@ -8,4 +8,7 @@ public static class NetworkCommand  {
     public const string CONNECT = "CONNECT";
     public const string LOGIN = "LOGIN";
     public const string EXIT = "EXIT";
+    public const string FOLLOW = "FOLLOW";
+    public const string RETURN = "RETURN";
+    public const string DEFAULT = "Default";
 }
